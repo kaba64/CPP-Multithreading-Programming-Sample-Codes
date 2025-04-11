@@ -20,7 +20,6 @@ The std::lock_guard is not copyable.
 
 On many systems, the std::lock_guard object is 8 bytes in size with one private member mutex_type&.
 
-```cpp
 private: /* From Linux implementation */
       mutex_type&  _M_device;
 
@@ -34,7 +33,6 @@ It provides different constructors, which enables it to construct an object with
 
 These flexibilities come with the price of more memory usage, 16 bytes on my system, and a slight decline in performance. It uses a boolean flag in addition to the mutex_type&
 
-```cpp
 private: /* From Linux implementation */
       mutex_type*       _M_device;      
       bool              _M_owns;
