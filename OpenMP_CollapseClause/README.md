@@ -10,7 +10,8 @@ Using the collapse clause with n > 1 probably results in better performance when
 
 However, caution should be taken when there is a chance that different threads write to the same memory location after collapsing the loops or parallelization of the nested loops. As an example of this issue, consider the matrix-matrix multiplication using the Rank-1 update:
 
-/* There is a race condition and incorrect results will be produced */
+There is a race condition and incorrect results will be produced in the following code:
+
 #pragma omp parallel for collapse(2)
 for (int p = 0; p < k; ++p){
   for (int j = 0; j < n; ++j) {
