@@ -20,12 +20,13 @@ A **counting semaphore** can be used to control access to resources consisting o
 
 The `std::counting_semaphore` class is a wrapper around two other classes depending on the version of C++ available. The following snippet is from libstdc++:
 
-```cpp
+```
 #if defined __cpp_lib_atomic_wait &&  _GLIBCXX_USE_POSIX_SEMAPHORE
   using __semaphore_impl = __atomic_semaphore;
 #elif _GLIBCXX_HAVE_POSIX_SEMAPHORE
   using __semaphore_impl = __platform_semaphore;
 #endif
+```
 
 If the compiler and standard library support std::atomic_wait() (a C++20 feature) and _GLIBCXX_USE_POSIX_SEMAPHORE is not set, then it uses an implementation based on atomic variables and std::atomic::wait().
 
