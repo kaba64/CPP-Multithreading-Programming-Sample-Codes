@@ -33,7 +33,7 @@ If the compiler and standard library support std::atomic_wait() (a C++20 feature
 If libstdc++ has POSIX semaphores available (e.g., sem_post, sem_wait from <semaphore.h>) and _GLIBCXX_USE_POSIX_SEMAPHORE is set, it falls back to using the platform’s native implementation, such as glibc’s sem_t, sem_init, sem_wait, and sem_post.
 std::binary_semaphore
 
-std::binary_semaphore:
+## `std::binary_semaphore`
 
 std::binary_semaphore is simply a specialization of the counting semaphore: std::counting_semaphore<1>.
 
