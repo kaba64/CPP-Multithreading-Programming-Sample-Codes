@@ -20,7 +20,9 @@ A **counting semaphore** can be used to control access to resources consisting o
 
 The `std::counting_semaphore` class is a wrapper around two other classes depending on the version of C++ available. The following snippet is from libstdc++:
 
+
 ```c
+
 #if defined __cpp_lib_atomic_wait &&  _GLIBCXX_USE_POSIX_SEMAPHORE
   using __semaphore_impl = __atomic_semaphore;
 #elif _GLIBCXX_HAVE_POSIX_SEMAPHORE
@@ -34,7 +36,7 @@ If the compiler and standard library support std::atomic_wait() (a C++20 feature
 If libstdc++ has POSIX semaphores available (e.g., sem_post, sem_wait from <semaphore.h>) and _GLIBCXX_USE_POSIX_SEMAPHORE is set, it falls back to using the platform’s native implementation, such as glibc’s sem_t, sem_init, sem_wait, and sem_post.
 std::binary_semaphore
 
-std::binary_semaphore:
+## `std::binary_semaphore`
 
 std::binary_semaphore is simply a specialization of the counting semaphore: std::counting_semaphore<1>.
 
