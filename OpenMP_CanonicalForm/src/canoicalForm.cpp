@@ -33,10 +33,14 @@ int main(int argc,char* argv[]){
   
   /*The usage of the STL algorithm and execution policy*/
   const auto it = std::find_if(std::execution::par,data.begin(), data.end(),codition);
-  int index_findif = std::distance(data.begin(),it);
   
-  std::cout<<"data["<<index<<"] = "<<data.at(index)<<"\n";
-  std::cout<<"data["<<index_findif<<"] = "<<data.at(index_findif)<<"\n";
+  if(it==data.end())
+    std::cerr<<"No data found in that range ("<<bound_a<<","<<bound_b<<")\n";
+  else{
+    auto index_findif = std::distance(data.begin(),it);
+    std::cout<<"data["<<index<<"] = "<<data.at(index)<<"\n";
+    std::cout<<"data["<<index_findif<<"] = "<<data.at(index_findif)<<"\n";
+  }
   
   return EXIT_SUCCESS;
 }
