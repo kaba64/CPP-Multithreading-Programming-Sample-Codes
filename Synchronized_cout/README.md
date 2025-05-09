@@ -2,9 +2,9 @@
 
 A race condition can occur in multi-threaded programming when the outcome of an operation depends on the relative order of execution of that operation across different threads.
 
-A potential race condition occurs when multiple threads write to the std::cout without any mutual exclusion, and the output of the threads may interleave.
+While the standard library guarantees that the std::cout variable is protected from corruption, a potential race condition might occur when multiple threads write to the std::cout without mutual exclusion, and the threads' output may interleave.
 
-The C++ Standard Library provides various facilities to prevent this race condition.
+The C++ Standard Library provides various facilities to prevent this interleaving.
 
 ## Using mutex and locks:
 
