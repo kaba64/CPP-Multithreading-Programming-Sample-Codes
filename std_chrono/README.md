@@ -27,7 +27,7 @@ All clocks have the member function 'now()' to get the current point in time.
 
 ## The system_clock class:
 
-The class 'std::chrono::system_clock' represents the wall clock time obtained from the system-wide real-time wall clock. Its ticks are uniform and not adjustable.
+The class 'std::chrono::system_clock' represents the wall clock time obtained from the system-wide real-time wall clock. Its ticks are not uniform because the clock can be adjusted.
 
 It is the only standard C++ clock that can directly interoperate with C-style time, such as the type 'std::time_t'.
 
